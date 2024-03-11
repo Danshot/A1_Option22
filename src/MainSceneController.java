@@ -9,7 +9,8 @@ public class MainSceneController {
 
     @FXML
     void btnOnClicked(ActionEvent event) {
-        System.out.print("Вика пукнула");
+
+        
     }
 
 }
