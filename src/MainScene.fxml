@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
+   <children>
+      <BorderPane prefHeight="550.0" prefWidth="700.0" styleClass="background">
+         <center>
+            <VBox prefHeight="463.0" prefWidth="580.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="680.0">
+                     <children>
+                        <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="999.0" prefWidth="999.0">
+                           <top>
+                              <Label text="Тип объекта" textFill="#000279" BorderPane.alignment="TOP_LEFT">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <BorderPane.margin>
+                                    <Insets left="10.0" />
+                                 </BorderPane.margin>
+                              </Label>
+                           </top>
+                           <center>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <RadioButton fx:id="rbFlat" mnemonicParsing="false" selected="true" text="Квартира">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="typeObject" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbCottage" mnemonicParsing="false" text="Коттедж" toggleGroup="$typeObject">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </RadioButton>
+                                 </children>
+                              </HBox>
+                           </center>
+                        </BorderPane>
+                        <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="999.0" prefWidth="999.0">
+                           <top>
+                              <Label text="Вид объекта" textFill="#000279" BorderPane.alignment="CENTER_LEFT">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </top>
+                           <center>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <RadioButton fx:id="rbSecondaryHousing" mnemonicParsing="false" selected="true" text="Вторичное жильё">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="viewObject" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbNewBuilding" mnemonicParsing="false" text="Новостройка" toggleGroup="$viewObject">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </RadioButton>
+                                 </children>
+                              </HBox>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="77.0" prefWidth="680.0">
+                     <children>
+                        <BorderPane prefHeight="999.0" prefWidth="999.0">
+                           <top>
+                              <Label text="Площадь квартиры" textFill="#000279" BorderPane.alignment="CENTER_LEFT">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </top>
+                           <center>
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <TextField fx:id="txtAreaApartment" prefWidth="198.0" promptText="0">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Slider fx:id="sliAreaApartment" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="15.0" left="10.0" right="20.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="999.0" prefWidth="999.0">
+                           <top>
+                              <Label text="Высота потолка" textFill="#000279" BorderPane.alignment="CENTER_LEFT">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </top>
+                           <center>
+                              <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                       <children>
+                                          <TextField fx:id="txtCeilingHeight" prefWidth="198.0" promptText="0">
+                                             <VBox.margin>
+                                                <Insets right="150.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Slider fx:id="sliCeilingHeight" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="15.0" left="15.0" right="20.0" top="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </center>
+                        </BorderPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="55.0" prefWidth="680.0">
+                     <children>
+                        <BorderPane prefHeight="999.0" prefWidth="999.0">
+                           <top>
+                              <Label text="Монтаж электропроводки" textFill="#000279" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </top>
+                           <center>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <RadioButton fx:id="rdEWy" mnemonicParsing="false" text="Да">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="mountingE" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rdEWn" mnemonicParsing="false" selected="true" text="Нет" toggleGroup="$mountingE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </RadioButton>
+                                 </children>
+                              </HBox>
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="999.0" prefWidth="999.0">
+                           <top>
+                              <Label text="Монтаж системы водоснабжения и канализации" textFill="#000279" BorderPane.alignment="CENTER_LEFT">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </top>
+                           <center>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <RadioButton fx:id="rbSy" mnemonicParsing="false" text="Да">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="mountingV" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbSn" mnemonicParsing="false" selected="true" text="Нет" toggleGroup="$mountingV">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </RadioButton>
+                                 </children>
+                              </HBox>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="55.0" prefWidth="680.0">
+                     <children>
+                        <BorderPane prefHeight="999.0" prefWidth="999.0">
+                           <top>
+                              <Label text="Установка дверей" textFill="#000279" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </top>
+                           <center>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <RadioButton fx:id="rbDy" mnemonicParsing="false" text="Да">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="installD" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbDn" mnemonicParsing="false" selected="true" text="Нет" toggleGroup="$installD">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </RadioButton>
+                                 </children>
+                              </HBox>
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="999.0" prefWidth="999.0">
+                           <top>
+                              <Label text="Монтаж радиаторов" textFill="#000279" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </top>
+                           <center>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <RadioButton fx:id="rbRy" mnemonicParsing="false" text="Да">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="mountingR" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbRn" mnemonicParsing="false" selected="true" text="Нет" toggleGroup="$mountingR">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </RadioButton>
+                                 </children>
+                              </HBox>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </HBox>
+                  <GridPane prefHeight="156.0" prefWidth="680.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="73.0" minHeight="10.0" prefHeight="36.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="132.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="1">
+                           <children>
+                              <CheckBox fx:id="chbLaminate" mnemonicParsing="false" text="Ламинат или паркетная доска">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="chbBoard" mnemonicParsing="false" text="Массивная доска">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="chbTile" mnemonicParsing="false" text="Плитка">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <CheckBox fx:id="chkPaperWallpaper" mnemonicParsing="false" text="Обои бумажные">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="chbWallpaperForColor" mnemonicParsing="false" text="Обои под окрас">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="chbWallСolor" mnemonicParsing="false" text="Окрас стен">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="chbCeramicTiles" mnemonicParsing="false" text="Керамическая плитка">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <children>
+                              <CheckBox mnemonicParsing="false" text="Окрас потолков">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Окрас одноуровненвый">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Окрас многоуровневый">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Натяжные потолки">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                        </VBox>
+                        <Label text="Отделка пола" textFill="#000279">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Отделка стен" textFill="#000279" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Отделка потолка" textFill="#000279" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <BorderPane prefHeight="44.0" prefWidth="600.0" styleClass="backgroundStyle" stylesheets="@style.css" BorderPane.alignment="TOP_LEFT">
+               <center>
+                  <Label alignment="CENTER" text="Калькулятор стоимости ремонта" textFill="WHITE" BorderPane.alignment="CENTER_LEFT">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </center>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </BorderPane>
+         </top>
+         <bottom>
+            <BorderPane prefHeight="35.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <left>
+                  <Label contentDisplay="RIGHT" text="Ориентировочная стоимость работы:" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets left="10.0" />
+                     </BorderPane.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <Label alignment="CENTER" text="0 руб">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Label>
+               </left>
+            </BorderPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
