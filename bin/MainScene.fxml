@@ -41,7 +41,7 @@
                            <center>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <RadioButton fx:id="rbFlat" mnemonicParsing="false" onAction="#updatePrice" selected="true" text="Квартира">
+                                    <RadioButton fx:id="rbFlat" mnemonicParsing="false" onAction="#updatePriceA1" selected="true" text="Квартира">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -49,7 +49,7 @@
                                           <ToggleGroup fx:id="typeObject" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="rbCottage" mnemonicParsing="false" onAction="#updatePrice" text="Коттедж" toggleGroup="$typeObject">
+                                    <RadioButton fx:id="rbCottage" mnemonicParsing="false" onAction="#updatePriceA1" text="Коттедж" toggleGroup="$typeObject">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -72,7 +72,7 @@
                            <center>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <RadioButton fx:id="rbSecondaryHousing" mnemonicParsing="false" onAction="#updatePrice" selected="true" text="Вторичное жильё">
+                                    <RadioButton fx:id="rbSecondaryHousing" mnemonicParsing="false" onAction="#updatePriceA2" selected="true" text="Вторичное жильё">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -80,7 +80,7 @@
                                           <ToggleGroup fx:id="viewObject" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="rbNewBuilding" mnemonicParsing="false" onAction="#updatePrice" text="Новостройка" toggleGroup="$viewObject">
+                                    <RadioButton fx:id="rbNewBuilding" mnemonicParsing="false" onAction="#updatePriceA2" text="Новостройка" toggleGroup="$viewObject">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -107,7 +107,7 @@
                            <center>
                               <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <TextField fx:id="txtAreaApartment" onAction="#updatePrice" prefWidth="198.0" promptText="0">
+                                    <TextField fx:id="txtAreaApartment" prefWidth="198.0" promptText="0">
                                        <VBox.margin>
                                           <Insets right="150.0" />
                                        </VBox.margin>
@@ -136,7 +136,7 @@
                                  <children>
                                     <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                                        <children>
-                                          <TextField fx:id="txtCeilingHeight" onAction="#updatePrice" prefWidth="198.0" promptText="0">
+                                          <TextField fx:id="txtCeilingHeight" prefWidth="198.0" promptText="0">
                                              <VBox.margin>
                                                 <Insets right="150.0" />
                                              </VBox.margin>
@@ -170,9 +170,9 @@
                               </Label>
                            </top>
                            <center>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+                              <HBox fx:id="rootView" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <RadioButton fx:id="rdEWy" mnemonicParsing="false" onAction="#updatePrice" text="Да">
+                                    <RadioButton fx:id="rdEWy" mnemonicParsing="false" onAction="#updatePriceB1" text="Да">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -180,7 +180,7 @@
                                           <ToggleGroup fx:id="mountingE" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="rdEWn" mnemonicParsing="false" onAction="#updatePrice" selected="true" text="Нет" toggleGroup="$mountingE">
+                                    <RadioButton fx:id="rdEWn" mnemonicParsing="false" onAction="#updatePriceB1" selected="true" text="Нет" toggleGroup="$mountingE">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -203,7 +203,7 @@
                            <center>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <RadioButton fx:id="rbSy" mnemonicParsing="false" onAction="#updatePrice" text="Да">
+                                    <RadioButton fx:id="rbSy" mnemonicParsing="false" onAction="#updatePriceB2" text="Да">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -211,7 +211,7 @@
                                           <ToggleGroup fx:id="mountingV" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="rbSn" mnemonicParsing="false" onAction="#updatePrice" selected="true" text="Нет" toggleGroup="$mountingV">
+                                    <RadioButton fx:id="rbSn" mnemonicParsing="false" onAction="#updatePriceB2" selected="true" text="Нет" toggleGroup="$mountingV">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -238,7 +238,7 @@
                            <center>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <RadioButton fx:id="rbDy" mnemonicParsing="false" onAction="#updatePrice" text="Да">
+                                    <RadioButton fx:id="rbDy" mnemonicParsing="false" onAction="#updatePriceC1" text="Да">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -246,7 +246,7 @@
                                           <ToggleGroup fx:id="installD" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="rbDn" mnemonicParsing="false" onAction="#updatePrice" selected="true" text="Нет" toggleGroup="$installD">
+                                    <RadioButton fx:id="rbDn" mnemonicParsing="false" onAction="#updatePriceC1" selected="true" text="Нет" toggleGroup="$installD">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -269,7 +269,7 @@
                            <center>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <RadioButton fx:id="rbRy" mnemonicParsing="false" onAction="#updatePrice" text="Да">
+                                    <RadioButton fx:id="rbRy" mnemonicParsing="false" onAction="#updatePriceC2" text="Да">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -277,7 +277,7 @@
                                           <ToggleGroup fx:id="mountingR" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton fx:id="rbRn" mnemonicParsing="false" onAction="#updatePrice" selected="true" text="Нет" toggleGroup="$mountingR">
+                                    <RadioButton fx:id="rbRn" mnemonicParsing="false" onAction="#updatePriceC2" selected="true" text="Нет" toggleGroup="$mountingR">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -301,17 +301,17 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="1">
                            <children>
-                              <CheckBox fx:id="chbLaminate" mnemonicParsing="false" text="Ламинат или паркетная доска">
+                              <CheckBox fx:id="chbLaminate" mnemonicParsing="false" onAction="#updatePriceCheckBoxA1" text="Ламинат или паркетная доска">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox fx:id="chbBoard" mnemonicParsing="false" text="Массивная доска">
+                              <CheckBox fx:id="chbBoard" mnemonicParsing="false" onAction="#updatePriceCheckBoxA2" text="Массивная доска">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox fx:id="chbTile" mnemonicParsing="false" text="Плитка">
+                              <CheckBox fx:id="chbTile" mnemonicParsing="false" onAction="#updatePriceCheckBoxA3" text="Плитка">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -320,22 +320,22 @@
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
-                              <CheckBox fx:id="chkPaperWallpaper" mnemonicParsing="false" text="Обои бумажные">
+                              <CheckBox fx:id="chkPaperWallpaper" mnemonicParsing="false" onAction="#updatePriceCheckBoxB1" text="Обои бумажные">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox fx:id="chbWallpaperForColor" mnemonicParsing="false" text="Обои под окрас">
+                              <CheckBox fx:id="chbWallpaperForColor" mnemonicParsing="false" onAction="#updatePriceCheckBoxB2" text="Обои под окрас">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox fx:id="chbWallColor" mnemonicParsing="false" text="Окрас стен">
+                              <CheckBox fx:id="chbWallColor" mnemonicParsing="false" onAction="#updatePriceCheckBoxB3" text="Окрас стен">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox fx:id="chbCeramicTiles" mnemonicParsing="false" text="Керамическая плитка">
+                              <CheckBox fx:id="chbCeramicTiles" mnemonicParsing="false" onAction="#updatePriceCheckBoxB4" text="Керамическая плитка">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -344,22 +344,22 @@
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <children>
-                              <CheckBox fx:id="chkColor" mnemonicParsing="false" text="Окрас потолков">
+                              <CheckBox fx:id="chkColor" mnemonicParsing="false" onAction="#updatePriceCheckBoxC1" text="Окрас потолков">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox fx:id="chkSingleLevel" mnemonicParsing="false" text="Окрас одноуровненвый">
+                              <CheckBox fx:id="chkSingleLevel" mnemonicParsing="false" onAction="#updatePriceCheckBoxC2" text="Окрас одноуровненвый">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox fx:id="chkMultiLevel" mnemonicParsing="false" text="Окрас многоуровневый">
+                              <CheckBox fx:id="chkMultiLevel" mnemonicParsing="false" onAction="#updatePriceCheckBoxC3" text="Окрас многоуровневый">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox fx:id="chkCeiling" mnemonicParsing="false" text="Натяжные потолки">
+                              <CheckBox fx:id="chkCeiling" mnemonicParsing="false" onAction="#updatePriceCheckBoxC4" text="Натяжные потолки">
                                  <font>
                                     <Font size="14.0" />
                                  </font>

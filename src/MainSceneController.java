@@ -1,6 +1,5 @@
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
+/* Решил я пойти по лёгкому пути */
 
 public class MainSceneController implements Initializable {
     // Вид и тип объекта
@@ -65,27 +65,129 @@ public class MainSceneController implements Initializable {
     @FXML
     public Slider sliCeilingHeight;
 
-    int countApartment = 10;
+    int countApartment = 100;
     int elementA;
     int elementB;
 
-    public void updatePrice(ActionEvent event) {
-
+    // Секция Тип объекта
+    public void updatePriceA1(ActionEvent event) {
+        if (rbFlat.isSelected())
+            countApartment += 10;
+        if (rbCottage.isSelected())
+            countApartment -= 10;
+        updatelbl();
     }
+    // Секция Вид объекта
+    public void updatePriceA2(ActionEvent event) {
+        if (rbSecondaryHousing.isSelected())
+            countApartment += 10;
+        if (rbNewBuilding.isSelected())
+            countApartment -= 10;
+        updatelbl();
+    }
+    // Секция Монтаж электропроводки
+    public void updatePriceB1(ActionEvent event) {
+        if (rdEWy.isSelected())
+            countApartment += 10;
+        if (rdEWn.isSelected())
+            countApartment -= 10;
+        updatelbl();
+    }
+    // Секция Монтаж системы водоснабжения и канализации
+    public void updatePriceB2(ActionEvent event) {
+        if (rbSy.isSelected())
+            countApartment += 10;
+        if (rbSn.isSelected())
+            countApartment -= 10;
+        updatelbl();
+    }
+    // Секция Установка дверей
+    public void updatePriceC1(ActionEvent event) {
+        if (rbDy.isSelected())
+            countApartment += 10;
+        if (rbDn.isSelected())
+            countApartment -= 10;
+        updatelbl();
+    }
+    // Секция Монтаж радиаторов
+    public void updatePriceC2(ActionEvent event) {
+        if (rbRy.isSelected())
+            countApartment += 10;
+        if (rbRn.isSelected())
+            countApartment -= 10;
+        updatelbl();
+    }
+    public void updatePriceCheckBoxA1(ActionEvent event) {
+        if(chbLaminate.isSelected() == true) countApartment +=20;
+        if(chbLaminate.isSelected() == false) countApartment -=20;
+        updatelbl();
+    }
+    public void updatePriceCheckBoxA2(ActionEvent event) {
+        if(chbBoard.isSelected() == true) countApartment +=20;
+        if(chbBoard.isSelected() == false) countApartment -=20;
+        updatelbl();
+    }
+    public void updatePriceCheckBoxA3(ActionEvent event) {
+        if(chbTile.isSelected() == true) countApartment +=20;
+        if(chbTile.isSelected() == false) countApartment -=20;
+        updatelbl();
+    }
+    public void updatePriceCheckBoxB1(ActionEvent event) {
+        if(chkPaperWallpaper.isSelected() == true) countApartment +=20;
+        if(chkPaperWallpaper.isSelected() == false) countApartment -=20;
+        updatelbl();
+    }
+    public void updatePriceCheckBoxB2(ActionEvent event) {
+        if(chbWallpaperForColor.isSelected() == true) countApartment +=20;
+        if(chbWallpaperForColor.isSelected() == false) countApartment -=20;
+        updatelbl();
+    }
+    public void updatePriceCheckBoxB3(ActionEvent event) {
+        if(chbWallColor.isSelected() == true) countApartment +=20;
+        if(chbWallColor.isSelected() == false) countApartment -=20;
+        updatelbl();
+    }
+    public void updatePriceCheckBoxB4(ActionEvent event) {
+        if(chbCeramicTiles.isSelected() == true) countApartment +=20;
+        if(chbCeramicTiles.isSelected() == false) countApartment -=20;
+        updatelbl();
+    }
+    public void updatePriceCheckBoxC1(ActionEvent event) {
+        if(chkColor.isSelected() == true) countApartment +=20;
+        if(chkColor.isSelected() == false) countApartment -=20;
+        updatelbl();
+    }
+    public void updatePriceCheckBoxC2(ActionEvent event) {
+        if(chkSingleLevel.isSelected() == true) countApartment +=20;
+        if(chkSingleLevel.isSelected() == false) countApartment -=20;
+        updatelbl();
+    }
+    public void updatePriceCheckBoxC3(ActionEvent event) {
+        if(chkMultiLevel.isSelected() == true) countApartment +=20;
+        if(chkMultiLevel.isSelected() == false) countApartment -=20;
+        updatelbl();
+    }
+    public void updatePriceCheckBoxC4(ActionEvent event) {
+        if(chkCeiling.isSelected() == true) countApartment +=20;
+        if(chkCeiling.isSelected() == false) countApartment -=20;
+        updatelbl();
+    }
+   
+
     private void updatelbl() {
+
         if (elementA != 0 && elementB != 0) {
             int summ = countApartment * (elementA + elementB);
             lblPrice.setText(summ + " руб");
-        }
-        else{
+        } else {
             if (elementB != 0) {
-                lblPrice.setText(countApartment + " руб");
+                lblPrice.setText(0 + " руб");
             } else {
                 int summ = countApartment * elementA;
                 lblPrice.setText(summ + " руб");
             }
         }
-        
+
     }
 
     public void initialize(URL location, ResourceBundle resources) {
@@ -152,6 +254,18 @@ public class MainSceneController implements Initializable {
 
 // Черновик
 
+ // @FXML
+    // private ToggleGroup propertyType;
+    // private Alert alert = new Alert(Alert.AlertType.ERROR);
+    // public void onHelloButtonClick() {
+    // //calcWalls(squareField.getText(), heightField.getText());
+    // RadioButton selectedPropertyType = (RadioButton)
+    // propertyType.getSelectedToggle();
+    // alert.setAlertType(Alert.AlertType.INFORMATION);
+    // alert.setContentText(selectedPropertyType.getText());
+    // alert.showAndWait();
+    // }
+
 // ((observableValue, s, t1) - > {
 // if (!t1.isEmpty()) {
 // if (!t1.matches(numberMatcher)) {
@@ -181,3 +295,5 @@ public class MainSceneController implements Initializable {
 // sliAreaApartment.setOnDragDetected(new EventHandler<? super MouseEvent>
 // getOnDragDetected());
 // }
+
+//
